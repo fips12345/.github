@@ -1,46 +1,52 @@
 # Configuration for probot-stale - https://github.com/probot/stale
+# This file configures the Probot Stale app, which automatically marks and closes stale issues and pull requests.
 
-# Number of days of inactivity before an Issue or Pull Request becomes stale
+# Number of days of inactivity before an Issue or Pull Request becomes stale.
+# After this period of inactivity, the `staleLabel` will be applied.
 daysUntilStale: 14
 
-# Number of days of inactivity before an Issue or Pull Request with the stale label is closed.
-# Set to false to disable. If disabled, issues still need to be closed manually, but will remain marked as stale.
+# Number of days of inactivity before a stale Issue or Pull Request is closed.
+# After this period, the issue or pull request will be closed.
+# Set to false to disable automatic closing.
 daysUntilClose: 14
 
-# Only issues or pull requests with all of these labels are check if stale. Defaults to `[]` (disabled)
+# Only issues or pull requests with all of these labels are checked if stale.
+# An empty list means all issues and pull requests are checked.
 onlyLabels: 
   - awaiting response
   
-# Issues or Pull Requests with these labels will never be considered stale. Set to `[]` to disable
+# Issues or Pull Requests with these labels will never be considered stale.
 exemptLabels:
   - pinned
 
-# Set to true to ignore issues in a project (defaults to false)
+# Set to true to ignore issues in a project.
 exemptProjects: false
 
-# Set to true to ignore issues in a milestone (defaults to false)
+# Set to true to ignore issues in a milestone.
 exemptMilestones: false
 
-# Set to true to ignore issues with an assignee (defaults to false)
+# Set to true to ignore issues with an assignee.
 exemptAssignees: false
 
-# Label to use when marking as stale
+# Label to use when marking as stale.
 staleLabel: stale
 
-# Comment to post when marking as stale. Set to `false` to disable
+# Comment to post when marking as stale. Set to `false` to disable.
+# You can use placeholders like {{author}} and {{url}}.
 markComment: false
 
-# Comment to post when closing a stale Issue or Pull Request.
+# Comment to post when closing a stale Issue or Pull Request. Set to `false` to disable.
 closeComment: >
   Closed due to inactivity.
 
-# Limit the number of actions per hour, from 1-30. Default is 30
+# Limit the number of actions per hour, from 1-30. Default is 30.
+# This helps to avoid rate-limiting by the GitHub API.
 limitPerRun: 30
 
-# Limit to only `issues` or `pulls`
+# Limit to only `issues` or `pulls`.
 # only: issues
 
-# Optionally, specify configuration settings that are specific to just 'issues' or 'pulls':
+# Optionally, specify configuration settings that are specific to just 'issues' or 'pulls'.
 # pulls:
 #   daysUntilStale: 30
 #   markComment: >

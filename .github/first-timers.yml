@@ -1,6 +1,14 @@
+# Configuration for the first-timers app - https://github.com/hoodiehq/first-timers-bot
+# This file configures the First Timers Bot, which helps new contributors get started.
+
+# Labels to apply to the issues created by the bot.
 labels:
   - first-timers-only
   - hacktoberfest
 
-# load template from the ".github/first-timers-issue-template.md" in the ".github" repository
+# Template for the issue body.
+# The bot will use the content of this file to create the issue.
+# The format is `[owner]/[repo]:[path]`.
+# In this case, it's loading the template from the `.github/first-timers-issue-template.md` file
+# in the `.github` repository of the same owner.
 template: .github:.github/first-timers-issue-template.md
